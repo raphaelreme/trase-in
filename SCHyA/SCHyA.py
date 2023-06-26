@@ -622,10 +622,14 @@ def SingleCellIntensities(video, positions, dimentionROI, Circle_radius, distanc
     position_updated = []
     all_points = []
     for track in range(len(positions)):
-        intensity, posits_corr,points = SingleCellIntensity(track, video, positions, dimentionROI, Circle_radius, distance_threshold)
-        intensities.append(intensity)
-        position_updated.append(positions[track])
-        all_points.append(points)
+        try:
+            intensity, posits_corr,points = SingleCellIntensity(track, video, positions, dimentionROI, Circle_radius, distance_threshold)
+            intensities.append(intensity)
+            position_updated.append(positions[track])
+            all_points.append(points)
+        except Exception as e:
+            print(e)
+            print('Issue in track ID: ', track)
     return intensities, position_updated, all_points
 
 #intensities from all individual red channels
