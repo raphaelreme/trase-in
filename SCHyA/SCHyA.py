@@ -37,6 +37,12 @@ def Read_Data_TIFseq(csv_path, vid_path, red_vid_path):
     red_vid = iio.ImageCollection(red_vid_path + '/*.tif')
     return positions, vid, red_vid
 
+def Read_Data_TIFseq_byo(npy_path, vid_path, red_vid_path):
+    positions = np.load(npy_path)
+    vid = iio.ImageCollection(vid_path + '/*.tif')
+    red_vid = iio.ImageCollection(red_vid_path + '/*.tif')
+    return positions, vid, red_vid
+
 #ROI function
 def ROIextractor(frame,points,dim):
     #why are these NOT already integers?? is it not pixel values?
