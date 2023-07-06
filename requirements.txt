@@ -1,0 +1,5 @@
+byotrack==0.2.0
+# Stardist no gpu
+stardist
+tensorflow
+ 
