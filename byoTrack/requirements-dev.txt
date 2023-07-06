@@ -1,7 +1,0 @@
--e .[full]
-black
-build
-mypy
-pylint
-twine
-types-tqdm
