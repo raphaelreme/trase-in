@@ -1,5 +1,6 @@
 byotrack==0.2.0
-# Stardist no gpu
+notebook
+seaborn
+scikit-video  # XXX: Should be unused
 stardist
-tensorflow
- 
+tensorflow  # Check the tensorflow doc to install with gpu support
