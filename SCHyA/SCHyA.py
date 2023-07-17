@@ -38,7 +38,7 @@ def Read_Data_TIFseq(csv_path, vid_path, red_vid_path):
     return positions, vid, red_vid
 
 def Read_Data_TIFseq_byo(npy_path, vid_path, red_vid_path):
-    positions = np.load(npy_path)
+    positions = np.load(npy_path, allow_pickle=True)
     vid = iio.ImageCollection(vid_path + '/*.tif')
     red_vid = iio.ImageCollection(red_vid_path + '/*.tif')
     return positions, vid, red_vid
