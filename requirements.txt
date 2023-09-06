@@ -1,6 +1,6 @@
-byotrack==0.2.0
+byotrack
+matplotlib
 notebook
-seaborn
-scikit-video  # XXX: Should be unused
+scipy
 stardist
 tensorflow  # Check the tensorflow doc to install with gpu support
