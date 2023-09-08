@@ -73,3 +73,23 @@ def ica_decorr(intensities: np.ndarray, ctrl_intensities: np.ndarray, tolerance:
         best_outcome = possible_outcomes[min_corr_index]
         Ynew.append(best_outcome)
     return np.array(Ynew)
+
+
+def smooth(intensities: np.ndarray, window_size: int) -> np.ndarray:
+    """Running averaged of the signal
+
+    Args:
+        intensities (np.ndarary): Extracted intensities
+            Shape: (n_tracks, n_frames), dtype: np.float64
+
+    Returns:
+        np.ndarray: Smoothed intensities
+            Shape: (n_tracks, n_frames), dtype: np.float64
+    """
+    smoothed = []
+    n = np.convolve(np.ones(intensities.shape[1]), np.ones(window_size), mode="same")
+
+    for intensity in intensities:
+        smoothed.append(np.convolve(intensity, np.ones(window_size), mode="same") / n)
+
+    return np.array(smoothed)

@@ -227,26 +227,6 @@ class SubRoiExtractor:
         return local_maxima
 
 
-def smooth(intensities: np.ndarray, window_size: int) -> np.ndarray:
-    """Running averaged of the signal
-
-    Args:
-        intensities (np.ndarary): Extracted intensities
-            Shape: (n_tracks, n_frames), dtype: np.float64
-
-    Returns:
-        np.ndarray: Smoothed intensities
-            Shape: (n_tracks, n_frames), dtype: np.float64
-    """
-    smoothed = []
-    n = np.convolve(np.ones(intensities.shape[1]), np.ones(window_size), mode="same")
-
-    for intensity in intensities:
-        smoothed.append(np.convolve(intensity, np.ones(window_size), mode="same") / n)
-
-    return np.array(smoothed)
-
-
 # Old Single cell extraction from Noah. Rewritten as SubRoiExtractor
 # #extraction of intensity from single neuron within ROI
 # def SingleCellIntensity(video, track, dimentionROI, Circle_radius, distance_threshold, display_on = False):
