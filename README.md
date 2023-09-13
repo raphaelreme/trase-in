@@ -1,5 +1,5 @@
 # Utopia
-Preliminary code for Utopia paper
+Code for the paper
 
 
 ## Install
