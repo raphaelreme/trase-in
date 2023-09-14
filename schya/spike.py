@@ -47,7 +47,7 @@ def clusterize_spikes(spikes: np.ndarray, std=5.0) -> np.ndarray:
 
 
 def binarize_std(spikes: np.ndarray, k: float) -> np.ndarray:
-    """Keep spikes that deviate more than k std (on each line)"""
+    """Keep spikes that deviate more than k std (on each neurons)"""
     spikes = spikes.copy()
 
     for line in spikes:
@@ -78,6 +78,18 @@ def binarize_ratio(spikes: np.ndarray, ratio: float) -> np.ndarray:
 
     spikes[spikes <= thresh] = 0
     spikes[spikes > thresh] = 1
+
+    return spikes
+
+
+def binarize_max_minus_std(spikes: np.ndarray, k: float) -> np.ndarray:
+    """Keep spikes larger than max - k * std (for each line)"""
+    spikes = spikes.copy()
+
+    for line in spikes:
+        thresh = max(0, line[line > 0].max() - k * line[line > 0].std())
+        line[line <= thresh] = 0
+        line[line > thresh] = 1
 
     return spikes
 
