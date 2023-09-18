@@ -1,6 +1,11 @@
 # TraSE-IN
 
+
 Code of TraSE-IN paper: Automatic monitoring of whole-body neural activity in behaving Hydra.
+
+The tracking code is published as a re-usable python library: [ByoTrack](https://github.com/raphaelreme/byotrack)
+
+![pipeline](pipeline.jpeg)
 
 
 ## Install
