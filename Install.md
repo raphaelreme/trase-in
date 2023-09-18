@@ -1,15 +1,15 @@
 # 0. Download the code
 
-The recommanded way is to use git and cloning the official repository:
+The recommended way is to use git and cloning the official repository:
 
 ```bash
-$ git clone https://github.com/raphaelreme/schya.git
+$ git clone https://github.com/raphaelreme/trase-in.git
 ```
 
 The code should be organized as
 
 ```
-DIR/schya/*.py
+DIR/trasein/*.py
     LICENSE
     README.md
     main.ipynb
@@ -26,7 +26,7 @@ Follow the online [guidelines](https://conda.io/projects/conda/en/latest/user-gu
 
 # 2. [Optional] Install Mamba (If not already installed)
 
-The installation guidlines have recently changed. You can follow them. Another way is to install it with conda with the following:
+We advise following the online guidelines. Nonetheless here is how you can install it through conda:
 
 ```bash
 $ conda install -n base -c conda-forge mamba
@@ -34,13 +34,13 @@ $ conda install -n base -c conda-forge mamba
 
 # 3. Create the right python environment
 
-We require python 3.10 so that both byotrack and Caiman can work.
+We require python 3.10 so that both ByoTrack and Caiman can work.
 
 ```bash
 $ # With mamba
-$ mamba create -n utopia python==3.10
+$ mamba create -n trasein python==3.10
 $ # Else
-$ conda create -n utopia python==3.10
+$ conda create -n trasein python==3.10
 ```
 
 # 4. Jump in the environement and install required packaqes
@@ -51,16 +51,16 @@ We advise following their respective installation guidelines. Nonetheless we pro
 
 ```bash
 $ # With mamba
-$ mamba activate utopia
+$ mamba activate trasein
 $ mamba install -c conda-forge caiman  # Install caiman
 $ pip install -r requirements.txt  # Install byotrack and additional requirements
 $ # Else
-$ conda activate utopia
+$ conda activate trasein
 $ conda install -c conda-forge caiman  # Install caiman (Maybe slow with conda)
 $ pip install -r requirements.txt  # Install byotrack and additional requirements
 ```
 
-We do not provide here an example to install with GPU support. Please refer to the documentation of [ByoTrack](https://github.com/raphaelreme/byotrack) and its dependencies.
+We do not provide an example to install with GPU support. Please refer to the documentation of [ByoTrack](https://github.com/raphaelreme/byotrack) and its dependencies.
 
 # 5. You are ready to run the main notebook
 
