@@ -26,3 +26,12 @@ A more complete guide is provided in the `Install.md` file.
 ## Getting started
 
 The `main.ipynb` notebook runs the whole pipeline and provides visualization at different timestep.
+
+## Model & Data
+
+We have trained our own [StarDist](https://github.com/stardist/stardist) model in order to solve the neurons detection on each frame.
+It can be downloaded from https://partage.imt.fr/index.php/s/npwHJHZebxqGMPi. We also provide a downloading script `download_model.sh`
+
+To run detection with this stardist model in the `main.ipynb` notebook, you can simply change `model_path` value with the path to the `stardist` folder.
+
+Example data will soon be available.
