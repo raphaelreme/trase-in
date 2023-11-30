@@ -1,4 +1,4 @@
-byotrack
+byotrack==0.3.5
 matplotlib
 notebook
 scipy
