@@ -48,3 +48,17 @@ It can be downloaded from https://partage.imt.fr/index.php/s/npwHJHZebxqGMPi. We
 To run detection with this stardist model in the `main.ipynb` notebook, you can simply change `model_path` value with the path to the `stardist` folder.
 
 Example data will soon be available.
+
+
+## Cite us
+
+```bibtex
+@article{hanson2023automatic,
+  title={Automatic monitoring of whole-body neural activity in behaving Hydra},
+  author={Hanson, Alison and Reme, Raphael and Telerman, Noah and Yamamoto, Wataru and Olivo-Marin, Jean-Christophe and Lagache, Thibault and Yuste, Rafael},
+  journal={bioRxiv},
+  pages={2023--09},
+  year={2023},
+  publisher={Cold Spring Harbor Laboratory}
+}
+```
