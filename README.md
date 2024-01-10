@@ -1,6 +1,8 @@
 # TraSE-IN
 
-Code of TraSE-IN paper: Automatic monitoring of whole-body neural activity in behaving Hydra.
+Tracking and Spike Estimation of Individual Neurons
+
+This is the official code implementation of `Automatic monitoring of whole-body neural activity in behaving Hydra` (See below for the full reference).
 
 The tracking code is published as a re-usable python library: [ByoTrack](https://github.com/raphaelreme/byotrack)
 
@@ -16,7 +18,7 @@ We advise following their respective installation guidelines. Nonetheless we pro
 
 ```bash
 $ mamba create -n trasein -c conda-forge python==3.10 caiman
-$ mamba activate trasein
+$ conda activate trasein
 $ pip install -r requirements.txt
 ```
 

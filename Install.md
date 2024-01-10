@@ -52,7 +52,7 @@ Your new python environement is called `trasein`. In a terminal, you can use it 
 
 ```bash
 $ # With mamba
-$ mamba activate trasein
+$ mamba activate trasein   # You may have to still use 'conda activate' instead of 'mamba activate'
 $ # Else
 $ conda activate trasein
 ```
@@ -67,7 +67,7 @@ We advise following their respective installation guidelines. Nonetheless we pro
 
 ```bash
 $ # With mamba
-$ mamba activate trasein  # Activate the env if not done
+$ mamba activate trasein  # Activate the env if not done (you may have to still use 'conda activate' instead of 'mamba activate')
 $ mamba install -c conda-forge caiman  # Install caiman
 $ pip install -r requirements.txt  # Install byotrack and additional requirements
 $ # Else
