@@ -81,11 +81,9 @@ We do not provide an example to install with GPU support. Running on GPU allows 
 # 5. Install Icy
 In TraseIn, the tracking is done in three steps: Detections on each frame, linking detections into tracklets, tracklet-stitching to bridge over missed detections.
 
-Detections is done in python with StarDist. The tracklet stitching part is implemented directly in python in ByoTrack. But the linking of detections through time is based on
-EMHT algorithm, implemented in java in Icy software. Thus, to run the tracking pipeline, TraseIn requires Icy as an external dependency. (The python code calls Icy and execute EMHT
-algorithm in java).
+Detections is done in python with StarDist. The tracklet stitching part is implemented directly in python in ByoTrack. But the linking of detections through time is based on EMHT algorithm, implemented in java in Icy software. Thus, to run the tracking pipeline, TraseIn requires Icy as an external dependency. (The python code calls Icy and execute EMHT algorithm in java).
 
-Follow the [installation guide of Icy](https://icy.bioimageanalysis.org/tutorial/installation-instructions-for-icy-software/). And check that you are able to run the application.
+Follow the [installation guide of Icy](https://icy.bioimageanalysis.org/tutorial/installation-instructions-for-icy-software/). And check that you are able to run the application. Moreover our code relies on the `Spot Tracking Blocks` plugin, please follow the following [tutorial](https://icy.bioimageanalysis.org/tutorial/how-to-install-an-icy-plugin/) to install this plugin.
 
 Locate the Icy installation folder. For Windows or Linux, you have chosen this location. For MacOs, it may be automatically installed in the Applications folder. Inside of this installation folder, you should find some executable for Icy and the main jar file: `icy.jar`. The path to this jar file should be given to ByoTrack in the tracking pipeline. (See `Run the main notebook`)
 

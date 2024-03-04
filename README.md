@@ -22,7 +22,7 @@ $ conda activate trasein
 $ pip install -r requirements.txt
 ```
 
-In order to run the tracking pipeline, you also need to install [Icy](https://icy.bioimageanalysis.org/) software. Please follow their guidelines for installation.
+In order to run the tracking pipeline, you also need to install [Icy](https://icy.bioimageanalysis.org/) software and the Spot Tracking Blocks plugin. Please follow their guidelines for installation.
 
 ## Getting started
 
