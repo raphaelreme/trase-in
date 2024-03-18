@@ -49,7 +49,7 @@ It can be downloaded from https://partage.imt.fr/index.php/s/npwHJHZebxqGMPi. We
 
 To run detection with this stardist model in the `main.ipynb` notebook, you can simply change `model_path` value with the path to the `stardist` folder.
 
-Example data will soon be available.
+You can run our pipeline on your data. For reproduction purposes, our data can be downloaded from https://doi.org/10.5061/dryad.h9w0vt4q3. Unzip the data, then the path to a GCaMP video and TdTomato video must be provided as input of the whole pipeline. (See `Getting Started`)
 
 
 ## Cite us

@@ -101,7 +101,7 @@ Or manually download the zip file and unzip it. The path to the stardist folder 
 
 # 7. Download Example Data
 
-You can use your own videos, but for reproduction purposes we have uploaded our own data. It will be soon available.
+You can use your own videos, but for reproduction purposes we have uploaded our own data at https://doi.org/10.5061/dryad.h9w0vt4q3.
 
 Download and unzip the data. The path to a GCaMP video and TdTomato video must be provided as input of the whole pipeline. (See `Run the main notebook`)
 
