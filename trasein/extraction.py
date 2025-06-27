@@ -10,7 +10,10 @@ import byotrack
 
 
 def extract_intensities_from_roi(
-    video: Sequence[np.ndarray], tracks: Collection[byotrack.Track], roi_size: int
+    video: Sequence[np.ndarray],
+    tracks: Collection[byotrack.Track],
+    roi_size: int,
+    anisotropy=3,
 ) -> np.ndarray:
     """Extract intensities at the track location from the given video
 
@@ -18,12 +21,15 @@ def extract_intensities_from_roi(
         video (Sequence[np.ndarray]): Video
         tracks (Collection[byotrack.Track]): Tracks
         roi_size (int): Size of the square roi
+        anisotropy (float): Anisotropy (if in 3D) of the Z-axis
+            Default: 3.0 (The roi is 3.0 smaller in Z)
 
     Returns:
         np.ndarray: Intensities for each track and time frame
             Shape (n_tracks, n_frames), dtype: np.float64
     """
     intensities = np.full((len(tracks), len(video)), np.nan)
+    roi_size_z = int(roi_size / anisotropy)
 
     for frame_id, frame in enumerate(tqdm.tqdm(video)):
         for track_id, track in enumerate(tracks):
@@ -31,10 +37,19 @@ def extract_intensities_from_roi(
             if point.isnan().any():
                 continue
 
-            i = int(point[0] - roi_size / 2)
-            j = int(point[1] - roi_size / 2)
+            if len(point) == 3:  # 3D
+                k = int(point[0] - roi_size_z / 2)
+                i = int(point[1] - roi_size / 2)
+                j = int(point[2] - roi_size / 2)
 
-            intensities[track_id, frame_id] = frame[max(0, i) : i + roi_size, max(0, j) : j + roi_size].mean()
+                intensities[track_id, frame_id] = frame[
+                    max(0, k) : k + roi_size_z, max(0, i) : i + roi_size, max(0, j) : j + roi_size
+                ].mean()
+
+            else:  # 2D
+                i = int(point[0] - roi_size / 2)
+                j = int(point[1] - roi_size / 2)
+                intensities[track_id, frame_id] = frame[max(0, i) : i + roi_size, max(0, j) : j + roi_size].mean()
     return intensities
 
 
