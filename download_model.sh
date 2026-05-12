@@ -1,3 +1,3 @@
 #!/bin/bash
-wget https://partage.imt.fr/index.php/s/npwHJHZebxqGMPi/download/stardist.zip
+wget https://github.com/raphaelreme/trase-in/releases/download/stardist_model/stardist.zip
 unzip stardist.zip

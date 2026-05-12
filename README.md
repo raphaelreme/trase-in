@@ -45,7 +45,7 @@ The notebook requires 4 different paths to be set inside the cells:
 ## Model & Data
 
 We have trained our own [StarDist](https://github.com/stardist/stardist) model in order to detect the neurons on each frame.
-It can be downloaded from https://partage.imt.fr/index.php/s/npwHJHZebxqGMPi. We also provide a downloading script `download_model.sh`
+It can be downloaded from https://github.com/raphaelreme/trase-in/releases/stardist_model. We also provide a downloading script `download_model.sh`
 
 To run detection with this stardist model in the `main.ipynb` notebook, you can simply change `model_path` value with the path to the `stardist` folder.
 
